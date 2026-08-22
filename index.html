@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Foot Gimme — Connect to Your Cloud Golf Simulator</title>
+  <meta name="description" content="The FiveFootGimme app lets you connect to a cloud gaming PC so you can run your favorite golf simulator software from anywhere — no high-end hardware required." />
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:site_name" content="Five Foot Gimme" />
+  <meta property="og:url" content="https://fivefootgimme.com/" />
+  <meta property="og:title" content="Five Foot Gimme — Cloud Golf Simulator Streaming" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Connect to a high-end cloud gaming PC and run GSPro from anywhere. Supports Garmin R10 and Rapsodo MLM2PRO." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Inter & Barlow -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Calendly Widget JS -->
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <header id="announcement-bar" class="announcement-bar">
+    <div class="container announcement-content">
+      <span class="pulse-dot"></span>
+      <span>Rapsodo MLM2PRO now supported!</span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="brand-badge">FIVE FOOT GIMME</div>
+      <h1 class="hero-title">Connect to Your Cloud Golf Simulator</h1>
+      <p class="hero-subtitle">
+        The FiveFootGimme app lets you connect to a cloud gaming PC so you can run your favorite golf simulator software from anywhere — no high-end hardware required.
+      </p>
+
+      <!-- Download Buttons -->
+      <div class="download-group" id="download-links">
+        <a id="btn-windows" href="https://github.com/Five-Foot-Gimme/FiveFootGimme-Releases/releases/latest/download/FiveFootGimme-windows-amd64.zip" class="btn btn-download btn-windows">
+          <svg class="btn-icon" viewBox="0 0 88 88" width="24" height="24" fill="currentColor">
+            <path d="M0 12.402l35.687-4.86.016 34.883-35.67.22zM35.67 46.881l.013 34.954-35.65-4.869-.033-29.864zM39.975 6.786l47.962-6.786v42.146l-47.962.361zM87.95 47.164l-.013 41.977-47.962-6.756-.041-35.15z"/>
+          </svg>
+          <div class="btn-text-wrapper">
+            <span class="btn-label">Download for</span>
+            <span class="btn-os">Windows</span>
+          </div>
+        </a>
+
+        <a id="btn-macos" href="https://github.com/Five-Foot-Gimme/FiveFootGimme-Releases/releases/latest/download/FiveFootGimme-macOS-universal.zip" class="btn btn-download btn-macos">
+          <svg class="btn-icon" viewBox="0 0 170 170" width="24" height="24" fill="currentColor">
+            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-5.04.12-9.97-1.93-14.8-6.15-3.32-2.87-7.27-7.6-11.85-14.19-6.3-9.11-11.37-19.78-15.19-32.02-3.83-12.24-5.74-24.08-5.74-35.53 0-14.58 3.58-26.68 10.73-36.31 7.15-9.63 16.32-14.56 27.5-14.79 5.37 0 11.05 1.29 17.06 3.86 6.01 2.57 10.15 3.97 12.43 4.2 2.76-.35 7.1-1.85 13.02-4.5 5.92-2.65 11.28-3.9 16.07-3.76 10.04.59 18.52 4.29 25.43 11.1 2.87 2.87 5.26 5.86 7.16 8.98-15.62 9.42-23.27 22.37-22.95 38.86.35 12.87 5.21 23.36 14.58 31.46 4.35 3.76 9.29 6.58 14.82 8.46-3.17 9.28-7.52 18.39-13.06 27.32zM119.22 31.06c0-7.39 2.72-14.36 8.16-20.91 5.44-6.55 12.09-10.15 19.96-10.8.23 1.05.35 1.99.35 2.82 0 7.33-2.76 14.37-8.28 21.12-5.52 6.75-12.26 10.38-20.19 10.88-.23-.94-.35-1.98-.35-3.11z"/>
+          </svg>
+          <div class="btn-text-wrapper">
+            <span class="btn-label">Download for</span>
+            <span class="btn-os">macOS</span>
+          </div>
+        </a>
+      </div>
+      <div id="release-version-badge" class="release-version-badge">Loading latest release...</div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works-section">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <p class="step-text">Download the application for your Operating System above</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <p class="step-text">Book your session using the Calendly widget below</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <p class="step-text">At your session start time, get your Session ID from the email sent (check your spam if you don't see it)</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <p class="step-text">Open the application, enter your Session ID, and launch your cloud session</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <h2 class="section-title">Book a Session</h2>
+      
+      <!-- Booking Policy Alert -->
+      <div class="policy-alert">
+        <span class="alert-icon">⚠️</span>
+        <div class="alert-content">
+          <strong>Booking Policy:</strong> All bookings and sales are final — no refunds will be issued. However, if you need to reschedule, please contact support more than 24 hours before your session. In that case, we can cancel your reservation and provide a 100% off voucher for use on another available date.
+        </div>
+      </div>
+
+      <!-- Calendly Inline Embed -->
+      <div class="calendly-wrapper">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/dylan-fivefootgimme/1-hour-sim?hide_gdpr_banner=1&background_color=0f172a&text_color=f8fafc&primary_color=10b981" style="min-width:320px;height:700px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>How do I download the app?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>Click the download link above to get the latest version of the FiveFootGimme app for Windows or macOS. Once downloaded, unzip, and run the application.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>What launch monitors are supported?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>Right now we support the <strong>Garmin Approach R10</strong> and <strong>Rapsodo MLM2PRO</strong>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>How do I get my session ID?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>At the start of your session slot, you will receive an email containing your unique session ID. Make sure to check your spam/junk folder if you don't see it!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Do I need my own license?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>At this time, all licenses are per device they're stored on, so we cover that cost for the machine you connect into.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Where did my player data go?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>Into the void! The only things that persist from session to session are the downloaded courses.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>My shots aren't being read in GSPro!</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>Sometimes connections get into a bad state. Hopefully it doesn't happen too often, but usually the first step to try is to open <strong>GSPro Setting → Game → System → Reset GSPro Connect</strong>. After a few moments, it should reset and reconnect!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>What Simulator Software is supported?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>We're looking into formal partnerships with sim software companies, but at this time only <strong>GSPro</strong> is supported.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community & Newsletter Footer -->
+  <footer id="footer" class="footer-section">
+    <div class="container footer-content">
+      <div class="community-box">
+        <h2 class="community-title">Join Our Community</h2>
+        <p class="community-tagline">"Five Foot Gimme: Because nobody ever said, 'I wish this round took six hours.'"</p>
+        
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Email address" required class="newsletter-input" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          © 2026 Five Foot Gimme. All rights reserved.
+        </div>
+        <div class="disclaimer">
+          All third-party trademarks, including launch monitor brand names, are the property of their respective owners and are used for identification purposes only. References do not imply affiliation or endorsement unless expressly stated.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Script -->
+  <script src="app.js"></script>
+</body>
+</html>
