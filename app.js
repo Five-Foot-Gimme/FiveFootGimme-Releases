@@ -7,9 +7,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. FAQ Accordion Toggle
   initFAQAccordion();
 
-  // 3. Newsletter Submission
-  initNewsletterForm();
+  // 3. Lead Form Submission (Formspree AJAX fallback)
+  initLeadForm();
+
+  // 4. Calendly Pop-Up Widget Trigger
+  initCalendlyPopup();
 });
+
+// Initialize Calendly Pop-up Widget
+function initCalendlyPopup() {
+  const bookBtn = document.getElementById('btn-open-calendly');
+  if (!bookBtn) return;
+
+  bookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      Calendly.initPopupWidget({
+        url: 'https://calendly.com/dclayto32?hide_gdpr_banner=1&background_color=0f172a&text_color=047857&primary_color=10b981'
+      });
+    } else {
+      window.open('https://calendly.com/dclayto32', '_blank');
+    }
+  });
+}
 
 // Fetch latest tag and asset download links from public GitHub releases repo
 async function fetchLatestRelease() {
@@ -36,8 +56,8 @@ async function fetchLatestRelease() {
 
     // Find specific OS binary assets in release
     if (release.assets && Array.isArray(release.assets)) {
-      const winAsset = release.assets.find(a => a.name.includes('windows'));
-      const macAsset = release.assets.find(a => a.name.includes('macOS') || a.name.includes('darwin'));
+      const winAsset = release.assets.find(a => a.name.toLowerCase().includes('win'));
+      const macAsset = release.assets.find(a => a.name.toLowerCase().includes('mac') || a.name.toLowerCase().includes('darwin'));
 
       if (winAsset && btnWindows) {
         btnWindows.href = winAsset.browser_download_url;
@@ -76,18 +96,34 @@ function initFAQAccordion() {
   });
 }
 
-// Handle Newsletter Subscription
-function initNewsletterForm() {
-  const form = document.getElementById('newsletter-form');
+// Handle Lead / Subscription Form
+function initLeadForm() {
+  const form = document.getElementById('lead-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const input = form.querySelector('.newsletter-input');
     const email = input ? input.value : '';
 
-    if (email) {
-      form.innerHTML = `<p style="color: #34d399; font-weight: 600; text-align: center;">Thank you for joining our community!</p>`;
+    if (!email) return;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.innerHTML = `<p style="color: #34d399; font-weight: 600; text-align: center; padding: 12px;">Thank you! We've received your request.</p>`;
+      } else {
+        form.innerHTML = `<p style="color: #34d399; font-weight: 600; text-align: center; padding: 12px;">Thank you for subscribing!</p>`;
+      }
+    } catch (err) {
+      form.innerHTML = `<p style="color: #34d399; font-weight: 600; text-align: center; padding: 12px;">Thank you for subscribing!</p>`;
     }
   });
 }

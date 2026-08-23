@@ -22,7 +22,8 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Calendly Widget JS -->
+  <!-- Calendly Widget CSS & JS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
@@ -44,11 +45,11 @@
         The FiveFootGimme app lets you connect to a cloud gaming PC so you can run your favorite golf simulator software from anywhere — no high-end hardware required.
       </p>
 
-      <!-- Download Buttons -->
+      <!-- Download Buttons with High-Precision SVG Icons -->
       <div class="download-group" id="download-links">
         <a id="btn-windows" href="https://github.com/Five-Foot-Gimme/FiveFootGimme-Releases/releases/latest/download/FiveFootGimme-windows-amd64.zip" class="btn btn-download btn-windows">
-          <svg class="btn-icon" viewBox="0 0 88 88" width="24" height="24" fill="currentColor">
-            <path d="M0 12.402l35.687-4.86.016 34.883-35.67.22zM35.67 46.881l.013 34.954-35.65-4.869-.033-29.864zM39.975 6.786l47.962-6.786v42.146l-47.962.361zM87.95 47.164l-.013 41.977-47.962-6.756-.041-35.15z"/>
+          <svg class="btn-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 0h11v11H0zM13 0h11v11H13zM0 13h11v11H0zM13 13h11v11H13z"/>
           </svg>
           <div class="btn-text-wrapper">
             <span class="btn-label">Download for</span>
@@ -57,8 +58,8 @@
         </a>
 
         <a id="btn-macos" href="https://github.com/Five-Foot-Gimme/FiveFootGimme-Releases/releases/latest/download/FiveFootGimme-macOS-universal.zip" class="btn btn-download btn-macos">
-          <svg class="btn-icon" viewBox="0 0 170 170" width="24" height="24" fill="currentColor">
-            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-5.04.12-9.97-1.93-14.8-6.15-3.32-2.87-7.27-7.6-11.85-14.19-6.3-9.11-11.37-19.78-15.19-32.02-3.83-12.24-5.74-24.08-5.74-35.53 0-14.58 3.58-26.68 10.73-36.31 7.15-9.63 16.32-14.56 27.5-14.79 5.37 0 11.05 1.29 17.06 3.86 6.01 2.57 10.15 3.97 12.43 4.2 2.76-.35 7.1-1.85 13.02-4.5 5.92-2.65 11.28-3.9 16.07-3.76 10.04.59 18.52 4.29 25.43 11.1 2.87 2.87 5.26 5.86 7.16 8.98-15.62 9.42-23.27 22.37-22.95 38.86.35 12.87 5.21 23.36 14.58 31.46 4.35 3.76 9.29 6.58 14.82 8.46-3.17 9.28-7.52 18.39-13.06 27.32zM119.22 31.06c0-7.39 2.72-14.36 8.16-20.91 5.44-6.55 12.09-10.15 19.96-10.8.23 1.05.35 1.99.35 2.82 0 7.33-2.76 14.37-8.28 21.12-5.52 6.75-12.26 10.38-20.19 10.88-.23-.94-.35-1.98-.35-3.11z"/>
+          <svg class="btn-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.552 9.1 1.51 12.086 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.129-4.59 1.129zM15.53 4.298c.844-1.026 1.403-2.454 1.247-3.883-1.208.052-2.675.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.74 1.35.104 2.715-.65 3.558-1.675z"/>
           </svg>
           <div class="btn-text-wrapper">
             <span class="btn-label">Download for</span>
@@ -70,26 +71,55 @@
     </div>
   </section>
 
-  <!-- How It Works Section -->
+  <!-- How It Works Section (Combined Steps + Video Side-by-Side) -->
   <section id="how-it-works" class="how-it-works-section">
     <div class="container">
       <h2 class="section-title">How It Works</h2>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <p class="step-text">Download the application for your Operating System above</p>
+
+      <div class="how-it-works-content">
+        <!-- Steps Column (Stacked Vertically) -->
+        <div class="steps-column">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-details">
+              <h3 class="step-title">Download</h3>
+              <p class="step-text">Download the application for your Operating System above</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-details">
+              <h3 class="step-title">Book Session</h3>
+              <p class="step-text">Book your session using the button below</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-details">
+              <h3 class="step-title">Get Session ID</h3>
+              <p class="step-text">At your session start time, get your Session ID from the email sent (check your spam if you don't see it)</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-details">
+              <h3 class="step-title">Launch</h3>
+              <p class="step-text">Open the application, enter your Session ID, and launch your cloud session</p>
+            </div>
+          </div>
         </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <p class="step-text">Book your session using the Calendly widget below</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <p class="step-text">At your session start time, get your Session ID from the email sent (check your spam if you don't see it)</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <p class="step-text">Open the application, enter your Session ID, and launch your cloud session</p>
+
+        <!-- Video Column (Vertical 9:16 Phone Preview) -->
+        <div class="video-column">
+          <div class="video-card">
+            <video controls preload="metadata" class="demo-video-player">
+              <source src="assets/FiveFootGimme_MLM2PRO_Website.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video playback.
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -99,7 +129,7 @@
   <section id="booking" class="booking-section">
     <div class="container">
       <h2 class="section-title">Book a Session</h2>
-      
+
       <!-- Booking Policy Alert -->
       <div class="policy-alert">
         <span class="alert-icon">⚠️</span>
@@ -110,7 +140,9 @@
 
       <!-- Calendly Inline Embed -->
       <div class="calendly-wrapper">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/dylan-fivefootgimme/1-hour-sim?hide_gdpr_banner=1&background_color=0f172a&text_color=f8fafc&primary_color=10b981" style="min-width:320px;height:700px;"></div>
+        <div class="calendly-inline-widget"
+          data-url="https://calendly.com/dclayto32?hide_gdpr_banner=1&background_color=0f172a&text_color=047857&primary_color=10b981"
+          style="min-width:320px;height:700px;"></div>
       </div>
     </div>
   </section>
@@ -193,19 +225,18 @@
     </div>
   </section>
 
-  <!-- Community & Newsletter Footer -->
+  <!-- Community & Footer -->
   <footer id="footer" class="footer-section">
     <div class="container footer-content">
       <div class="community-box">
-        <h2 class="community-title">Join Our Community</h2>
+        <h2 class="community-title">Get In Touch</h2>
         <p class="community-tagline">"Five Foot Gimme: Because nobody ever said, 'I wish this round took six hours.'"</p>
         
-        <form class="newsletter-form" id="newsletter-form">
-          <input type="email" placeholder="Email address" required class="newsletter-input" />
-          <button type="submit" class="newsletter-btn" aria-label="Subscribe">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+        <!-- Formspree Lead Capture Form -->
+        <form class="newsletter-form" id="lead-form" action="https://formspree.io/f/xyegvala" method="POST">
+          <input type="email" name="email" placeholder="Enter your email for updates" required class="newsletter-input" />
+          <button type="submit" class="btn btn-submit" aria-label="Subscribe">
+            Subscribe
           </button>
         </form>
       </div>
