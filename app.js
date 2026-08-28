@@ -1,5 +1,3 @@
-// Five Foot Gimme — Interactive Site JS
-
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Fetch Latest Release Version and Update Download Links
   fetchLatestRelease();
@@ -12,6 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Calendly Pop-Up Widget Trigger
   initCalendlyPopup();
+
+  // 5. App Download Tracking
+  initDownloadTracking();
+
+  // 6. Demo Video View Tracking
+  initVideoTracking();
+
+  // 7. Calendly Booking Embed Event Tracking
+  initCalendlyTracking();
 });
 
 // Initialize Calendly Pop-up Widget
@@ -21,6 +28,9 @@ function initCalendlyPopup() {
 
   bookBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    if (window.rdt) {
+      window.rdt('track', 'Custom', { customEventName: 'Booking Button Clicked' });
+    }
     if (window.Calendly) {
       Calendly.initPopupWidget({
         url: 'https://calendly.com/dclayto32?hide_gdpr_banner=1&background_color=0f172a&text_color=047857&primary_color=10b981'
@@ -96,7 +106,7 @@ function initFAQAccordion() {
   });
 }
 
-// Handle Lead / Subscription Form
+// Handle Lead / Subscription Form with Reddit Pixel tracking
 function initLeadForm() {
   const form = document.getElementById('lead-form');
   if (!form) return;
@@ -104,9 +114,13 @@ function initLeadForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const input = form.querySelector('.newsletter-input');
-    const email = input ? input.value : '';
+    const email = input ? input.value.trim().toLowerCase() : '';
 
     if (!email) return;
+
+    if (window.rdt) {
+      window.rdt('track', 'Lead', { email: email });
+    }
 
     try {
       const response = await fetch(form.action, {
@@ -127,3 +141,92 @@ function initLeadForm() {
     }
   });
 }
+
+// Track Windows and Mac App Downloads
+function initDownloadTracking() {
+  const btnWindows = document.getElementById('btn-windows');
+  const btnMacos = document.getElementById('btn-macos');
+
+  if (btnWindows) {
+    btnWindows.addEventListener('click', () => {
+      if (window.rdt) {
+        window.rdt('track', 'Custom', { customEventName: 'Download Windows App' });
+      }
+    });
+  }
+
+  if (btnMacos) {
+    btnMacos.addEventListener('click', () => {
+      if (window.rdt) {
+        window.rdt('track', 'Custom', { customEventName: 'Download Mac App' });
+      }
+    });
+  }
+}
+
+// Track Video Playback (Custom event on video start)
+function initVideoTracking() {
+  const videoPlayer = document.querySelector('.demo-video-player');
+  if (!videoPlayer) return;
+
+  let trackedPlay = false;
+  videoPlayer.addEventListener('play', () => {
+    if (!trackedPlay) {
+      trackedPlay = true;
+      if (window.rdt) {
+        window.rdt('track', 'Custom', {
+          customEventName: 'FiveFootGimme MLM2PRO Demo Video'
+        });
+      }
+    }
+  });
+}
+
+// Track Calendly iframe postMessage events (Timeslot selection & completed bookings)
+function initCalendlyTracking() {
+  window.addEventListener('message', (e) => {
+    if (!e.data || typeof e.data !== 'object') return;
+
+    const eventName = e.data.event;
+
+    if (eventName === 'calendly.date_and_time_selected') {
+      if (window.rdt) {
+        window.rdt('track', 'Custom', { customEventName: 'Web Booking Timeslot Selected' });
+      }
+    } else if (eventName === 'calendly.event_scheduled') {
+      const payload = e.data.payload;
+      const email = payload?.invitee?.email ? payload.invitee.email.trim().toLowerCase() : undefined;
+
+      // Extract payment info if present
+      const paymentInfo = payload?.invitee?.payment || payload?.payment;
+      let paidAmount;
+      let paidCurrency = 'USD';
+
+      if (paymentInfo?.amount !== undefined && paymentInfo?.amount !== null) {
+        paidAmount = typeof paymentInfo.amount === 'number'
+          ? paymentInfo.amount
+          : parseFloat(paymentInfo.amount);
+
+        if (paymentInfo.currency) {
+          paidCurrency = String(paymentInfo.currency).toUpperCase();
+        }
+      }
+
+      const metadata = {
+        currency: paidCurrency,
+        itemCount: 1,
+        ...(email ? { email } : {}),
+        ...(paidAmount !== undefined && !isNaN(paidAmount) ? { value: paidAmount } : {})
+      };
+
+      if (window.rdt) {
+        window.rdt('track', 'Purchase', metadata);
+        window.rdt('track', 'Custom', {
+          customEventName: 'Web Booking Completed',
+          ...metadata
+        });
+      }
+    }
+  });
+}
+
