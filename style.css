@@ -69,6 +69,21 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
+}
+
+.promo-code {
+  display: inline-block;
+  padding: 1px 7px;
+  margin: 0 2px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .pulse-dot {
@@ -110,18 +125,12 @@ body {
   z-index: 1;
 }
 
-.brand-badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 9999px;
-  color: var(--accent-emerald-light);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  margin-bottom: 20px;
+.hero-logo {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 10px 25px rgba(16, 185, 129, 0.28));
 }
 
 .hero-title {
@@ -304,8 +313,73 @@ body {
 
 .how-it-works-section,
 .booking-section,
+.troubleshooting-section,
 .faq-section {
   padding: 40px 0;
+}
+
+.section-subtitle {
+  max-width: 640px;
+  margin: -18px auto 28px;
+  text-align: center;
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+}
+
+/* Troubleshooting Grid */
+.troubleshooting-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.trouble-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.trouble-card:hover {
+  border-color: var(--border-highlight);
+  transform: translateY(-2px);
+}
+
+.trouble-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-emerald-light);
+  margin-bottom: 12px;
+}
+
+.trouble-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.trouble-list li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.trouble-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-emerald);
+  font-weight: 700;
+}
+
+.trouble-list strong {
+  color: var(--text-primary);
 }
 
 /* How It Works Side-by-Side Content Grid */
@@ -562,11 +636,27 @@ body {
   margin-bottom: 10px;
 }
 
+.inline-link {
+  color: var(--accent-emerald-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inline-link:hover {
+  color: #ffffff;
+}
+
+.support-contact {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
 .community-tagline {
   color: var(--text-secondary);
   font-style: italic;
   font-size: 0.95rem;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .newsletter-form {
@@ -629,6 +719,9 @@ body {
   .how-it-works-content {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .troubleshooting-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -4,7 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Five Foot Gimme — Connect to Your Cloud Golf Simulator</title>
-  <meta name="description" content="The FiveFootGimme app lets you connect to a cloud gaming PC so you can run your favorite golf simulator software from anywhere — no high-end hardware required." />
+  <meta name="description" content="The FiveFootGimme app lets you connect to a cloud gaming PC so you can run Pureplay or GSPro from anywhere with your Garmin R10 or Rapsodo MLM2PRO — no high-end hardware required." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#090d16" />
+  <link rel="canonical" href="https://fivefootgimme.com/" />
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
 
   <!-- OpenGraph / Social Meta Tags -->
   <meta property="og:site_name" content="Five Foot Gimme" />
@@ -12,7 +19,26 @@
   <meta property="og:title" content="Five Foot Gimme — Cloud Golf Simulator Streaming" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Connect to a high-end cloud gaming PC and run GSPro or Pureplay from anywhere. Supports Garmin R10 and Rapsodo MLM2PRO." />
+  <meta property="og:image" content="https://fivefootgimme.com/assets/logo.png" />
+  <meta property="og:image:alt" content="Five Foot Gimme — Cloud Golf Simulator Streaming" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Five Foot Gimme — Cloud Golf Simulator Streaming" />
+  <meta name="twitter:description" content="Connect to a high-end cloud gaming PC and run GSPro or Pureplay from anywhere. Supports Garmin R10 and Rapsodo MLM2PRO." />
+  <meta name="twitter:image" content="https://fivefootgimme.com/assets/logo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Five Foot Gimme",
+      "operatingSystem": "Windows, macOS",
+      "applicationCategory": "GameApplication",
+      "url": "https://fivefootgimme.com/",
+      "image": "https://fivefootgimme.com/assets/logo.png",
+      "description": "Connect your Garmin Approach R10 or Rapsodo MLM2PRO over Bluetooth to a cloud gaming PC running Pureplay or GSPro."
+    }
+  </script>
 
   <!-- Google Fonts: Inter & Barlow -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +46,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=9" />
 
   <!-- Calendly Widget CSS & JS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
@@ -39,7 +65,7 @@
   <header id="announcement-bar" class="announcement-bar">
     <div class="container announcement-content">
       <span class="pulse-dot"></span>
-      <span>Pureplay now supported!</span>
+      <span>Pureplay now supported! Use code <code class="promo-code">FFG_PUREPLAY</code> for $3 off your first 1-hour session through the end of 2026.</span>
     </div>
   </header>
 
@@ -47,7 +73,7 @@
   <section id="hero" class="hero-section">
     <div class="hero-bg-glow"></div>
     <div class="container hero-container">
-      <div class="brand-badge">FIVE FOOT GIMME</div>
+      <img src="assets/logo.png" alt="Five Foot Gimme" width="160" height="181" class="hero-logo" fetchpriority="high" />
       <h1 class="hero-title">Connect to Your Cloud Golf Simulator</h1>
       <p class="hero-subtitle">
         The FiveFootGimme app lets you connect to a cloud gaming PC so you can run your favorite golf simulator software from anywhere — no high-end hardware required.
@@ -170,7 +196,7 @@
       <div class="policy-alert">
         <span class="alert-icon">⚠️</span>
         <div class="alert-content">
-          <strong>Booking Policy:</strong> All bookings and sales are final — no refunds will be issued. However, if you need to reschedule, please contact support more than 24 hours before your session. In that case, we can cancel your reservation and provide a 100% off voucher for use on another available date.
+          <strong>Booking Policy:</strong> All bookings and sales are final — no refunds will be issued. However, if you need to reschedule, please contact <a href="mailto:support@fivefootgimme.com" class="inline-link">support@fivefootgimme.com</a> more than 24 hours before your session. In that case, we can cancel your reservation and provide a 100% off voucher for use on another available date.
         </div>
       </div>
 
@@ -179,6 +205,56 @@
         <div class="calendly-inline-widget"
           data-url="https://calendly.com/dclayto32?hide_gdpr_banner=1&background_color=0f172a&text_color=047857&primary_color=10b981"
           style="min-width:320px;height:700px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Troubleshooting Section -->
+  <section id="troubleshooting" class="troubleshooting-section">
+    <div class="container">
+      <h2 class="section-title">Launch Monitor Connection Troubleshooting</h2>
+      <p class="section-subtitle">
+        Having trouble getting your launch monitor to connect to your computer? Check these quick steps before your session starts.
+      </p>
+
+      <div class="troubleshooting-grid">
+        <div class="trouble-card">
+          <h3 class="trouble-title">Rapsodo MLM2PRO</h3>
+          <ul class="trouble-list">
+            <li><strong>Authenticate 3rd-party access:</strong> Open the Rapsodo mobile app, go to <em>3rd Party Apps</em>, and authenticate with <strong>AwesomeGolf</strong>.</li>
+            <li><strong>No OS pairing needed:</strong> There is no Bluetooth pairing mode — the FiveFootGimme app connects automatically over Bluetooth.</li>
+            <li><strong>Close phone apps:</strong> Make sure the Rapsodo app on your phone/tablet isn't actively holding the Bluetooth connection.</li>
+          </ul>
+        </div>
+
+        <div class="trouble-card">
+          <h3 class="trouble-title">Garmin Approach R10</h3>
+          <ul class="trouble-list">
+            <li><strong>Enable pairing mode:</strong> Ensure your R10 is powered on, charged, and in Bluetooth pairing mode nearby (flashing blue LED).</li>
+            <li><strong>Windows pairing:</strong> On Windows, you need to pair the R10 in Windows Bluetooth settings first (not needed on macOS).</li>
+            <li><strong>Disconnect from phone:</strong> Close the Garmin Golf app on your phone so it doesn't intercept the Bluetooth connection.</li>
+            <li><strong>macOS permissions:</strong> If prompted on macOS, allow Bluetooth access for FiveFootGimme in <em>System Settings → Privacy &amp; Security</em>.</li>
+          </ul>
+        </div>
+
+        <div class="trouble-card">
+          <h3 class="trouble-title">Test Before Your Session</h3>
+          <ul class="trouble-list">
+            <li><strong>Use Test Connection:</strong> Click <strong>Test Connection</strong> on your launch monitor card inside the FiveFootGimme app anytime — no Session ID required.</li>
+            <li><strong>Verify shot capture:</strong> Confirm your device connects and reads a test shot before your booked slot begins.</li>
+            <li><strong>Keep it close:</strong> Keep your computer within ~10–15 ft of your launch monitor with Bluetooth enabled.</li>
+          </ul>
+        </div>
+
+        <div class="trouble-card">
+          <h3 class="trouble-title">Stream Controls &amp; Video Quality</h3>
+          <ul class="trouble-list">
+            <li><strong>Adjust bitrate (5–40 Mbps):</strong> Lower bitrate means a grainier image, but works better on slower or unstable internet. Higher bitrate looks sharper, but requires a faster, more stable network.</li>
+            <li><strong>Direct WebRTC (Beta) vs. Legacy:</strong> The dedicated <strong>FiveFootGimme Streamer (Direct WebRTC)</strong> is currently in beta. If you hit connection issues, switch to <strong>Moonlight Web Stream (Legacy)</strong> in Stream Settings.</li>
+            <li><strong>Exit &amp; live controls:</strong> Click the <strong>connection signal icon</strong> in the stream to check status, change bitrate live, or <strong>Exit Stream</strong>.</li>
+            <li><strong>Use 5 GHz Wi-Fi or Ethernet:</strong> Avoid 2.4 GHz Wi-Fi when possible for smoother, lower-latency streaming.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -257,6 +333,26 @@
             <p>We currently support both <strong>GSPro</strong> and <strong>Pureplay</strong>! Once your cloud session launches, you can select either software directly inside the stream.</p>
           </div>
         </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>What are the system and internet requirements?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>Any standard <strong>Windows 10/11</strong> or <strong>macOS</strong> (Apple Silicon or Intel) computer with Bluetooth works — no dedicated GPU is needed since the simulator runs in the cloud. We recommend at least <strong>10–15 Mbps</strong> download speed over <strong>5 GHz Wi-Fi or Ethernet</strong> (you can lower the stream bitrate to 5–10 Mbps on slower connections).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>How do I contact support?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <p>Email us anytime at <a href="mailto:support@fivefootgimme.com" class="inline-link">support@fivefootgimme.com</a>. You can also use the <strong>Support</strong> button inside the FiveFootGimme app to export diagnostic logs if you're troubleshooting an issue.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -267,6 +363,9 @@
       <div class="community-box">
         <h2 class="community-title">Get In Touch</h2>
         <p class="community-tagline">"Five Foot Gimme: Because nobody ever said, 'I wish this round took six hours.'"</p>
+        <p class="support-contact">
+          Need help? Contact <a href="mailto:support@fivefootgimme.com" class="inline-link">support@fivefootgimme.com</a>
+        </p>
         
         <!-- Formspree Lead Capture Form -->
         <form class="newsletter-form" id="lead-form" action="https://formspree.io/f/xyegvala" method="POST">
